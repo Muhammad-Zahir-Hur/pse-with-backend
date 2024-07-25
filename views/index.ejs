@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<%- include('_headers') %>
+		<title>Power System Experts</title>
+	</head>
+	<body class="">
+		<header class="min-h-[100vh] w-full" id="home">
+			<%- include('_nav') %>
+			<!-- HERO section -->
+			<section
+				class="flex flex-col md:flex-row justify-center items-center mt-0">
+				<div
+					class="flex flex-col justify-center items-center h-max w-full basis-2/3 animate-on-scroll mt-10 md:mt-16">
+					<h1 class="section-main-heading">WE DELIVER EXCELENCE</h1>
+					<p
+						class="font-['Montserrat'] text-xl md:text-2xl font-bold text-center mb-4">
+						We are power system engineering consultants specializing in
+						modeling, simulation, and analysis.
+					</p>
+					<a class="btn-primary" href="#contact"> CONTACT </a>
+				</div>
+				<div class="w-full h-full basis-1/3 animate-on-scroll">
+					<img src="/images/hero-image.png" class="hidden md:block" alt="" />
+				</div>
+			</section>
+		</header>
+
+		<br />
+		<!-- Blogs -->
+		<section id="blogs">
+			<div>
+				<h1 class="section-main-heading mb-20 animate-on-scroll">BLOGS</h1>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+					<% articles.forEach(article=>{ %>
+					<div class="blog animate-on-scroll">
+						<h2><%= article.title %></h2>
+						<span> <%= article.createdAt.toLocaleDateString() %> </span>
+						<p><%= article.description %></p>
+					</div>
+					<% }) %>
+				</div>
+				<a class="btn-primary" href="/articles/all"> ALL Blogs </a>
+			</div>
+		</section>
+
+		<!-- Services  -->
+		<section class="with-bg" id="services">
+			<div>
+				<h1 class="section-main-heading animate-on-scroll">OUR SERVICES</h1>
+				<p>
+					We specialize in a wide range of power system studies and provide
+					valuable services to our clients. We perform power system planning
+					studies, Grid interconnection studies, Model quality and acceptance
+					test studies, Substation design and insulation coordination studies,
+					Protection Coordination Studies and and Operational Studies.
+				</p>
+			</div>
+		</section>
+		<!-- List of services -->
+		<section>
+			<div
+				class="grid grid-cols-1 md:grid-cols-2 gap-10 justify-center items-center mt-20">
+				<div class="service animate-on-scroll">
+					<h2>Grid management</h2>
+					<p>
+						Developers, OEMs and Financiers on utility scale generators (wind,
+						solar & battery)
+					</p>
+				</div>
+
+				<div class="service animate-on-scroll delay-75">
+					<h2>Protection Studies</h2>
+					<p>
+						Developers, OEMs and Financiers on utility scale generators (wind,
+						solar & battery)
+					</p>
+				</div>
+
+				<div class="service animate-on-scroll delay-150">
+					<h2>Power System Design and Engineering</h2>
+					<p>
+						Developers, OEMs and Financiers on utility scale generators (wind,
+						solar & battery)
+					</p>
+				</div>
+
+				<div class="service animate-on-scroll delay-200">
+					<h2>Network Planning</h2>
+					<p>
+						Network Service Providers and Operators to support transition to
+						lower carbon grids
+					</p>
+				</div>
+
+				<div class="service animate-on-scroll delay-300">
+					<h2>Strategic advice</h2>
+					<p>
+						Regulatory, Market and Government Bodies providing strategic and
+						technical advice to support policy change
+					</p>
+				</div>
+
+				<div class="service animate-on-scroll delay-100">
+					<h2>Operational Studies</h2>
+					<p>
+						Developers, OEMs and Financiers on utility scale generators (wind,
+						solar & battery)
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- About US section -->
+		<section class="with-bg" id="about">
+			<div>
+				<h1 class="section-main-heading animate-on-scroll">About Us</h1>
+				<p>
+					Power System Experts is a power system engineering consultancy
+					specializing in modelling, simulation, and analysis. A team of 10
+					power system engineers with extensive experience, including extensive
+					design of utility-scale renewable-generating systems. Our team has
+					global exposure and have worked on many projects collectively within
+					USA, Canada, Australia, South East Asia, the Middle East and Africa.
+				</p>
+			</div>
+		</section>
+
+		<!-- About us details -->
+
+		<section>
+			<div
+				class="grid grid-cols-1 md:grid-cols-2 gap-10 justify-center items-center mt-20">
+				<div class="service animate-on-scroll">
+					<h2>Our Mission</h2>
+					<p>
+						Our Mission is enable our clients for establishing safer, reliable
+						and cleaner power systems across the planet by providing them with
+						expert advice, capacity building and innovative ways of problem
+						solving.
+					</p>
+				</div>
+
+				<div class="service animate-on-scroll delay-75">
+					<h2>Our Vision</h2>
+					<p>
+						Our vision is to be a globally recognized power system solutions
+						provider.
+					</p>
+				</div>
+
+				<div class="service animate-on-scroll delay-150">
+					<h2>What we can do for You</h2>
+					<p>
+						Power System Experts (PSE) provides a wide range of services for
+						both static and dynamic power system analysis and connection
+						studies. We can assist in operational performance and future
+						planning, determine optimum operating configurations, and compare
+						alternatives to support capital projects operations and
+						expenditures. Our expertise is in providing innovative, reliable and
+						cost-effective engineering services that exceed the client's
+						expectations. We offer the most up-to-date, timely solutions and
+						power system analysis methodologies available to our clients. We
+						work across various industry sectors, providing power grid solutions
+						to the sectors associated with mining, oil and gas, renewable
+						energies, and utility transmission and distribution providers.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Us -->
+
+		<section class="with-bg" id="contact">
+			<div>
+				<h1 class="section-main-heading animate-on-scroll">Contact Us</h1>
+				<p>
+					You can reach us by sending us an email with your request at
+					contactus@psystemexp.com. Alternatively, you can fill the contact form
+					below and submit so that we could reach to you in response.
+				</p>
+			</div>
+		</section>
+		<!-- Input fields -->
+
+		<section class="">
+			<form id="contact-form" class="flex flex-col px-5">
+				<div class="input-div">
+					<label for="name">Name</label>
+					<input
+						type="text"
+						name="name"
+						id="name"
+						placeholder="Name"
+						required />
+				</div>
+
+				<div class="input-div">
+					<label for="email">Your Email</label>
+					<input
+						type="email"
+						name="email"
+						id="email"
+						placeholder="Example@abc.com"
+						required />
+				</div>
+
+				<div class="input-div">
+					<label for="message">Your Message</label>
+					<textarea
+						type="message"
+						name="message"
+						id="message"
+						placeholder="Hello, I wanted to..."
+						cols="30"
+						rows="10"
+						required>
+					</textarea>
+				</div>
+				<div class="input-div">
+					<button type="submit" id="send-message" class="btn-primary">
+						Send
+					</button>
+				</div>
+			</form>
+		</section>
+
+		<!-- Footer -->
+
+		<%- include('_footer') %>
+
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+		<script></script>
+	</body>
+	<div class="show"></div>
+</html>

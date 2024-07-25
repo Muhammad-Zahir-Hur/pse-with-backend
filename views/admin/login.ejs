@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../_headers') %>
+		<title>PSE:Admin</title>
+	</head>
+	<body>
+		<%- include('../_nav') %>
+
+		<form
+			action="/admin"
+			method="post"
+			class="flex flex-col justify-center items-center"
+			id="loginForm">
+			<div class="input-div">
+				<label for="name">User Name</label>
+				<input
+					type="text"
+					name="name"
+					id="name"
+					placeholder="User name"
+					required />
+			</div>
+
+			<div class="input-div">
+				<label for="password">Your Password</label>
+				<input
+					type="password"
+					name="password"
+					id="password"
+					placeholder="Example@abc.com"
+					required />
+			</div>
+			<div class="input-div">
+				<button type="submit" id="" class="btn-primary">Send</button>
+			</div>
+		</form>
+
+		<!-- <script>
+			const form = document.getElementById("loginForm");
+
+			form.addEventListener("submit", async (e) => {
+				e.preventDefault();
+
+				const formData = new FormData(form);
+
+				let jsonData = {};
+				for (key in formData) {
+					jsonData = { ...{ key: formData[key] } };
+				}
+				const response = await fetch("/admin", {
+					method: "POST",
+
+					body: JSON.stringify(jsonData),
+				});
+
+				const data = await response.json();
+
+				if (data.token) {
+					localStorage.setItem("token", data.token);
+
+					// You can also redirect the user to another page or perform any other action here
+				} else {
+					console.error("No token received from the server");
+				}
+			});
+		</script> -->
+	</body>
+</html>

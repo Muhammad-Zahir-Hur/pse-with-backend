@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../_headers') %>
+
+		<title><%= article.title %></title>
+	</head>
+	<body>
+		<%- include('../_nav') %>
+
+		<section>
+			<div>
+				<h1 class="section-main-heading !text-left"><%= article.title %></h1>
+				<div><span><%= article.createdAt.toLocaleDateString() %></span></div>
+				<div class="article"><%- article.sanitizedHtml %></div>
+			</div>
+		</section>
+
+		<%- include('../_footer') %>
+	</body>
+</html>

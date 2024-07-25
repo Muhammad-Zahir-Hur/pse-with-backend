@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--text-color-p: #818181;
+		--primary: #f5be47;
+		--secondary: #0a183a;
+		--text-bg: #000;
+		--text-color-dark: white;
+		--secondary-low-opacity: #0a183aa3;
+		--primary-low-opacity: #f5be47a3;
+	}
+}
+
+@layer components {
+	/* Nav styles */
+	.nav-link {
+		@apply rounded-full px-2 font-bold py-1 hover:bg-[color:var(--secondary)] hover:text-[color:var(--text-color-dark)] hover:scale-110 transition text-center w-[40%];
+		font-family: "Josefin Sans", sans-serif;
+	}
+
+	nav {
+		backdrop-filter: blur(30px);
+		/* box-shadow: 0 0 90px var(--primary); */
+		/* background-color: var(--primary-low-opacity); */
+		border: solid var(--primary-low-opacity) 1px;
+	}
+
+	/* Blog styles */
+	.blog,
+	.service {
+		text-align: center;
+	}
+
+	.blog h2,
+	.service h2 {
+		@apply font-bold text-3xl my-2;
+	}
+
+	.blog p,
+	.service p {
+		@apply text-[color:var(--text-color-p)];
+	}
+
+	/* Section styles */
+	section.with-bg {
+		@apply bg-[color:var(--primary)] py-20;
+	}
+
+	section.with-bg .section-main-heading,
+	section.with-bg p {
+		@apply text-[color:var(--secondary)] text-center;
+	}
+
+	/* Heading styles */
+	.section-sub-heading {
+		@apply text-[color:var(--secondary)] text-4xl lg:text-5xl text-center font-bold mb-5;
+	}
+
+	.section-main-heading {
+		@apply text-4xl lg:text-5xl  font-[900] my-10 text-[color:var(--secondary)] text-center;
+	}
+
+	/* Input styles */
+	.input-div {
+		@apply flex flex-col pt-10 w-full md:w-1/2 max-w-3xl;
+	}
+
+	.input-div label {
+		@apply font-bold;
+	}
+
+	.input-div input,
+	.input-div textarea {
+		@apply pl-10 px-1 py-2 rounded-lg border-[color:var(--secondary)] border-[1px];
+	}
+
+	/* Button styles */
+	.btn-primary {
+		@apply border font-bold rounded-full p-4 bg-[color:var(--primary)] mb-10 cursor-pointer hover:scale-110 transition-all block text-center w-full   mx-auto md:w-36 ml-0 md:ml-auto h-min;
+	}
+
+	.btn-secondary {
+		@apply border font-bold rounded-full p-4 bg-gray-500 text-white mb-10 cursor-pointer hover:scale-110 transition-all block text-center w-min min-w-36 ml-0 md:ml-auto mx-auto h-min;
+	}
+	/* Footer styles */
+	footer {
+		@apply mt-16 w-full mx-auto flex justify-center items-center min-h-[80vh];
+	}
+
+	.footer-link {
+		@apply rounded-full px-2 font-bold py-1 hover:bg-[color:var(--primary)] hover:text-[color:var(--secondary)] hover:scale-110 transition text-center;
+		font-family: "Josefin Sans", sans-serif;
+	}
+
+	/* Header styles */
+	header {
+		background: linear-gradient(
+				to bottom,
+				rgba(255, 255, 255, 0.5),
+				rgba(255, 255, 255, 1)
+			),
+			url("./images/bg.jpg");
+		background-size: cover;
+		background-position: center;
+	}
+
+	/* General styles */
+	p {
+		@apply text-center font-['Montserrat'];
+	}
+
+	section div,
+	footer div {
+		@apply container mx-auto px-4 md:px-0 mb-10;
+	}
+
+	/* Styling the articles written by the user */
+
+	.article-heading {
+		@apply section-main-heading !text-left;
+	}
+	div.article > p {
+		@apply text-left;
+	}
+	div.article h1,
+	div.article h2,
+	div.article h3,
+	div.article h4,
+	div.article h5,
+	div.article h6 {
+		@apply article-heading;
+	}
+	div.article h1 {
+		@apply text-3xl lg:text-4xl;
+	}
+	div.article h2 {
+		@apply text-2xl lg:text-3xl font-[600];
+	}
+	div.article h3 {
+		@apply text-xl lg:text-3xl font-[500];
+	}
+	div.article h4 {
+		@apply text-lg lg:text-xl font-[400];
+	}
+	div.article h5 {
+		@apply text-sm font-[300];
+	}
+	div.article h6 {
+		@apply font-[100];
+	}
+
+	/* Animations */
+	@keyframes appear {
+		from {
+			opacity: 0;
+			transform: translateX(-100%);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0%);
+		}
+	}
+
+	.animate-on-scroll {
+		transition: all 1s;
+		opacity: 0;
+		filter: blur(5px);
+		transform: translateX(-100%);
+	}
+
+	.show {
+		opacity: 1;
+		filter: blur(0px);
+		transform: translateX(0);
+	}
+
+	.menu {
+		transition-duration: 1000ms;
+	}
+}
+
+/* blogs shadows */
+
+.blog-shadowed {
+	box-shadow: var(--secondary-low-opacity) -5px 10px 15px;
+	/* @apply shadow-md; */
+}

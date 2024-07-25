@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../_headers') %>
+
+		<title>Blog</title>
+	</head>
+	<body>
+		<%- include('../_nav') %>
+		<section id="blogs">
+			<div>
+				<h1 class="section-main-heading mb-20 animate-on-scroll">BLOGS</h1>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+					<% articles.forEach(article=>{ %>
+					<div>
+						<div class="w-full flex justify-center blog-shadowed">
+							<a
+								class="blog-shadowed p-10 rounded"
+								href="/articles/<%= article.slug %>"
+								><h1 class="section-sub-heading"><%= article.title %></h1>
+								<p class="my-4">
+									<%= article.createdAt.toLocaleDateString() %>
+								</p>
+								<p><%= article.description %></p></a
+							>
+						</div>
+					</div>
+					<% }) %>
+				</div>
+			</div>
+		</section>
+
+		<%- include('../_footer') %>
+	</body>
+</html>

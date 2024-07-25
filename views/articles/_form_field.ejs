@@ -1,0 +1,30 @@
+<div class="input-div">
+	<label for="name">Title</label>
+	<input
+		type="text"
+		name="title"
+		id="title"
+		placeholder="TITLE"
+		required
+		value="<%= article.title %>" />
+</div>
+
+<div class="input-div">
+	<label for="name">Description for preview</label>
+
+	<textarea name="description" id="" placeholder="description" required>
+<%= article.description%></textarea
+	>
+</div>
+
+<div class="input-div">
+	<label for="name">Article content in Markdown format</label>
+
+	<textarea name="markdown" id="" placeholder="markdown" required>
+<%= article.markdown%></textarea
+	>
+</div>
+
+<div class="input-div">
+	<button type="submit" id="" class="btn-primary">Send</button>
+</div>
