@@ -7,7 +7,6 @@ const authkey = process.env.JWT_SECRET;
 
 const RegisterAdmin = async (req, res, next) => {
 	const { name, password } = req.body;
-
 	try {
 		if (!name || !password) {
 			res.status(400);
@@ -16,8 +15,6 @@ const RegisterAdmin = async (req, res, next) => {
 	} catch (err) {
 		next(err);
 	}
-
-	
 
 	const adminExists = await Admin.findOne({ name });
 	if (adminExists) {
@@ -34,8 +31,9 @@ const RegisterAdmin = async (req, res, next) => {
 	});
 
 	if (admin) {
-		const { name, id } = admin;
-		res.status(200).json({ name, token: generateToken(id) });
+		
+		res.cookie("token", generateToken(admin._id));
+		return res.redirect("admin/protected/");
 	}
 };
 
@@ -55,7 +53,11 @@ const AdminHomePage = async (req, res) => {
 	res.status(200).render("admin/index", { articles });
 };
 
+const newAdminPage = async (req, res) => {
+	res.status(200).render("admin/newAdmin");
+};
+
 function generateToken(id) {
 	return jwt.sign({ id }, authkey, { expiresIn: "30d" });
 }
-export { RegisterAdmin, LoginAdmin, AdminHomePage };
+export { RegisterAdmin, LoginAdmin, AdminHomePage, newAdminPage };

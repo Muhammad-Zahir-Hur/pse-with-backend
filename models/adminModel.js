@@ -7,11 +7,6 @@ const AdminSchema = mongoose.Schema(
 			type: String,
 			required: [true, "Please Provide a password"],
 		},
-		isAdmin: {
-			type: Boolean,
-			required: true,
-			default: false,
-		},
 	},
 	{ timestamps: true }
 );
