@@ -6,34 +6,45 @@ import "dotenv/config";
 const authkey = process.env.JWT_SECRET;
 
 const RegisterAdmin = async (req, res, next) => {
+	console.log("inside os RegisterAdmin route");
 	const { name, password } = req.body;
+	console.log(`fetching name and password:..... name: ${name}.......
+	password: ${password}`);
 	try {
 		if (!name || !password) {
+			console.log("!name || !password is True");
 			res.status(400);
 			throw new Error("Please Include all the Fields");
 		}
 	} catch (err) {
+		console.log("error inside !name || !password");
 		next(err);
 	}
 
 	const adminExists = await Admin.findOne({ name });
 	if (adminExists) {
+		console.log("admin exists");
 		return res.status(400).send("admin already Exists");
 	}
 
 	//Hash password
 	const salt = await bcrypt.genSalt(10);
 	const hashedPassword = await bcrypt.hash(password, salt);
+	console.log(
+		"name fetched,hashed password created,  now calling Admin.create()"
+	);
 
-	const admin = await Admin.create({
-		name,
-		password: hashedPassword,
-	});
+	try {
+		const admin = await Admin.create({
+			name,
+			password: hashedPassword,
+		});
 
-	if (admin) {
-		
+		console.log("admin created");
 		res.cookie("token", generateToken(admin._id));
-		return res.redirect("admin/protected/");
+		return res.redirect("/admin/protected/");
+	} catch (error) {
+		next(error);
 	}
 };
 
