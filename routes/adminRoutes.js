@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
 	const admins = await Admin.find({});
-	console.log(admins);
+
 	if (admins.length > 0) {
 		if (!req.cookies.token) {
 			return res.render("admin/login");

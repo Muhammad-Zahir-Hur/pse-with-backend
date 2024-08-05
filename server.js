@@ -7,7 +7,6 @@ import connectDB from "./config/db.js";
 import methodOverride from "method-override";
 import Article from "./models/articleModel.js";
 import cookieParser from "cookie-parser";
-import Protect from "./middleware/authMiddleware.js";
 // const dotenv = env.config();
 const PORT = 5000;
 const app = express();
