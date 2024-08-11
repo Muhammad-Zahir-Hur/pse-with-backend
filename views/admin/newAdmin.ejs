@@ -6,13 +6,15 @@
 	</head>
 	<body>
 		<%- include('../_nav') %>
-		<h1 class="section-main-heading">New Admin</h1>
-		<form
-			action="/admin/protected/newAdmin"
-			method="post"
-			class="flex flex-col justify-center items-center"
-			id="loginForm">
-			<%- include('./_form_fields.ejs') %>
-		</form>
+		<section>
+			<h1 class="section-main-heading">New Admin</h1>
+			<form
+				action="/admin/protected/newAdmin"
+				method="post"
+				class="flex flex-col justify-center items-center"
+				id="loginForm">
+				<%- include('./_form_fields.ejs') %>
+			</form>
+		</section>
 	</body>
 </html>

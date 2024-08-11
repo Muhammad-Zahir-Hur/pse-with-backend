@@ -8,14 +8,16 @@
 	<body>
 		<%- include('../_nav') %>
 
-		<h1>New article</h1>
-		<!-- Change the action parameter so that it calls a put request -->
-		<form
-			action="/articles/protected/<%= article.slug %>?_method=PUT"
-			method="POST"
-			class="flex flex-col justify-center items-center">
-			<%- include('_form_field') %>
-		</form>
+		<section>
+			<h1>New article</h1>
+			<!-- Change the action parameter so that it calls a put request -->
+			<form
+				action="/articles/protected/<%= article.slug %>?_method=PUT"
+				method="POST"
+				class="flex flex-col justify-center items-center">
+				<%- include('_form_field') %>
+			</form>
+		</section>
 		<%- include('../_footer') %>
 	</body>
 </html>

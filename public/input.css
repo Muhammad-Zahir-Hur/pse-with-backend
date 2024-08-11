@@ -78,12 +78,21 @@
 	}
 
 	/* Button styles */
+
+	.btn {
+		@apply border font-bold rounded-full p-4 mb-10 cursor-pointer hover:scale-110 transition-all block text-center w-max min-w-36 m-2 h-min;
+	}
+
+	.btn.w-fixed {
+		@apply !w-36;
+	}
+
 	.btn-primary {
-		@apply border font-bold rounded-full p-4 bg-[color:var(--primary)] mb-10 cursor-pointer hover:scale-110 transition-all block text-center w-full   mx-auto md:w-36 ml-0 md:ml-auto h-min;
+		@apply btn bg-[color:var(--primary)];
 	}
 
 	.btn-secondary {
-		@apply border font-bold rounded-full p-4 bg-gray-500 text-white mb-10 cursor-pointer hover:scale-110 transition-all block text-center w-min min-w-36 ml-0 md:ml-auto mx-auto h-min;
+		@apply btn bg-gray-500 text-white;
 	}
 	/* Footer styles */
 	footer {
