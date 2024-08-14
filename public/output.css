@@ -642,16 +642,16 @@ section.with-bg .section-main-heading,
 .section-sub-heading {
   margin-bottom: 1.25rem;
   text-align: center;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   font-weight: 700;
   color: var(--secondary);
 }
 
 @media (min-width: 976px) {
   .section-sub-heading {
-    font-size: 3rem;
-    line-height: 1;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -1564,8 +1564,8 @@ div.article sub {
 /* blogs shadows */
 
 .blog-shadowed {
-  box-shadow: var(--secondary-low-opacity) -5px 10px 15px;
-  /* @apply shadow-md; */
+  box-shadow: var(--secondary-low-opacity) -2px 4px 6px;
+  border-radius: 0.25rem;
 }
 
 .hover\:scale-125:hover {
