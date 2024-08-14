@@ -127,6 +127,7 @@
 	}
 
 	/* Styling the articles written by the user */
+	/* for serch for the blogs if you are looking for the styles of the blogs in main page */
 
 	.article-heading {
 		@apply section-main-heading !text-left;
@@ -159,6 +160,109 @@
 	}
 	div.article h6 {
 		@apply font-[100];
+	}
+
+	/* General Content */
+	div.article {
+		@apply text-base leading-relaxed text-[var(--text-color-p)];
+	}
+
+	/* Paragraphs */
+	div.article p {
+		@apply mb-6 text-[var(--text-color-p)];
+	}
+
+	/* Anchors */
+	div.article a {
+		@apply text-[var(--primary)] underline hover:text-[var(--primary-low-opacity)];
+	}
+
+	/* Blockquotes */
+	div.article blockquote {
+		@apply border-l-4 border-[var(--secondary)] pl-4 italic my-6 text-[var(--text-color-dark)] bg-[var(--secondary-low-opacity)] p-4 rounded;
+	}
+
+	/* Code Blocks */
+	div.article pre {
+		@apply bg-[var(--secondary-low-opacity)] text-[var(--text-color-dark)] p-4 rounded mb-6 overflow-auto;
+	}
+
+	div.article code {
+		@apply bg-[var(--secondary-low-opacity)] text-[var(--text-color-dark)] px-2 py-1 rounded;
+	}
+
+	/* Lists */
+	div.article ul,
+	div.article ol {
+		@apply mb-6 pl-6 list-inside;
+	}
+
+	div.article ul {
+		@apply list-disc;
+	}
+
+	div.article ol {
+		@apply list-decimal;
+	}
+
+	div.article li {
+		@apply mb-2;
+	}
+
+	/* Images */
+	div.article img {
+		@apply max-w-full h-auto rounded my-6;
+	}
+
+	/* Tables */
+	div.article table {
+		@apply w-full my-6 border-collapse bg-[var(--secondary-low-opacity)] rounded overflow-hidden;
+	}
+
+	div.article th,
+	div.article td {
+		@apply border border-[var(--secondary)] px-4 py-2 text-left;
+	}
+
+	div.article th {
+		@apply bg-[var(--secondary)] text-[var(--text-color-dark)];
+	}
+
+	div.article tr:nth-child(even) {
+		@apply bg-[var(--primary-low-opacity)];
+	}
+
+	/* Horizontal Rules */
+	div.article hr {
+		@apply border-t-2 border-[var(--secondary)] my-8;
+	}
+
+	/* Strong and Emphasis */
+	div.article strong {
+		@apply font-bold text-[var(--text-color-dark)];
+	}
+
+	div.article em {
+		@apply italic text-[var(--text-color-dark)];
+	}
+
+	/* Inline Quotes */
+	div.article q {
+		@apply text-[var(--text-color-dark)] italic;
+	}
+
+	/* Links */
+	div.article a {
+		@apply text-[var(--primary)] underline hover:text-[var(--primary-low-opacity)];
+	}
+
+	/* Superscript and Subscript */
+	div.article sup {
+		@apply align-super text-xs;
+	}
+
+	div.article sub {
+		@apply align-sub text-xs;
 	}
 
 	/* Animations */
