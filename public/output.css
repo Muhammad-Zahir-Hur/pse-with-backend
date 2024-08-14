@@ -1120,6 +1120,7 @@ div.article th,
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   text-align: left;
+  color: var(--text-color-dark);
 }
 
 div.article th {
@@ -1144,19 +1145,19 @@ div.article hr {
 
 div.article strong {
   font-weight: 700;
-  color: var(--text-color-dark);
+  color: var(--text-color-p);
 }
 
 div.article em {
   font-style: italic;
-  color: var(--text-color-dark);
+  color: var(--text-color-p);
 }
 
 /* Inline Quotes */
 
 div.article q {
   font-style: italic;
-  color: var(--text-color-dark);
+  color: var(--text-color-p);
 }
 
 /* Links */
