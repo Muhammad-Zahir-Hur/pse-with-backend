@@ -1546,10 +1546,6 @@ div.article sub {
   transition-duration: 150ms;
 }
 
-.delay-100 {
-  transition-delay: 100ms;
-}
-
 .delay-150 {
   transition-delay: 150ms;
 }
