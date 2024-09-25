@@ -5,7 +5,7 @@
 	"main": "server.js",
 	"type": "module",
 	"scripts": {
-		"start": "node server",
+		"start": "nodemon server",
 		"tailwind-build": "npx tailwindcss -i ./public/input.css -o ./public/output.css --watch"
 	},
 	"keywords": [],
