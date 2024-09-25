@@ -15,8 +15,7 @@
 					<h1 class="section-main-heading">
 						Empowering the Future with Expertise
 					</h1>
-					<p
-						class="font-['Montserrat'] text-xl md:text-2xl font-bold text-center mb-4">
+					<p class="font-['Montserrat'] text-xl text-center mb-4">
 						At Power System Experts, we deliver cutting-edge engineering
 						solutions designed to efficiency, reliability, and innovation.
 						Through comprehensive system studies, advanced dynamic modeling, and
@@ -32,22 +31,6 @@
 		</header>
 
 		<br />
-		<!-- Blogs -->
-		<section id="blogs">
-			<div>
-				<h1 class="section-main-heading mb-20 animate-on-scroll">BLOGS</h1>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-					<% articles.forEach(article=>{ %>
-					<div class="blog animate-on-scroll">
-						<h2><%= article.title %></h2>
-						<span> <%= article.createdAt.toLocaleDateString() %> </span>
-						<p><%= article.description %></p>
-					</div>
-					<% }) %>
-				</div>
-				<a class="btn-primary" href="/articles/all"> ALL Blogs </a>
-			</div>
-		</section>
 
 		<!-- Services  -->
 		<section class="with-bg" id="services">
@@ -181,62 +164,6 @@
 					</p>
 				</div>
 			</div>
-		</section>
-
-		<!-- Contact Us -->
-
-		<section class="with-bg" id="contact">
-			<div>
-				<h1 class="section-main-heading animate-on-scroll">Contact Us</h1>
-				<p>
-					You can reach us by sending us an email with your request at
-					contactus@psystemexp.com. Alternatively, you can fill the contact form
-					below and submit so that we could reach to you in response.
-				</p>
-			</div>
-		</section>
-		<!-- Input fields -->
-
-		<section class="">
-			<form id="contact-form" class="flex flex-col px-5">
-				<div class="input-div">
-					<label for="name">Name</label>
-					<input
-						type="text"
-						name="name"
-						id="name"
-						placeholder="Name"
-						required />
-				</div>
-
-				<div class="input-div">
-					<label for="email">Your Email</label>
-					<input
-						type="email"
-						name="email"
-						id="email"
-						placeholder="Example@abc.com"
-						required />
-				</div>
-
-				<div class="input-div">
-					<label for="message">Your Message</label>
-					<textarea
-						type="message"
-						name="message"
-						id="message"
-						placeholder="Hello, I wanted to..."
-						cols="30"
-						rows="10"
-						required>
-					</textarea>
-				</div>
-				<div class="input-div">
-					<button type="submit" id="send-message" class="btn-primary">
-						Send
-					</button>
-				</div>
-			</form>
 		</section>
 
 		<!-- Footer -->

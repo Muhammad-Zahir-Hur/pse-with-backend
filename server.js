@@ -3,6 +3,7 @@ import errorHandler from "./middleware/errorHandler.js";
 import articlesRouter from "./routes/articleRoutes.js";
 import protectedRouter from "./routes/protectedRoutes.js";
 import adminRouter from "./routes/adminRoutes.js";
+import renderPageRouter from "./routes/renderPages.js";
 import connectDB from "./config/db.js";
 import methodOverride from "method-override";
 import Article from "./models/articleModel.js";
@@ -27,6 +28,8 @@ app.get("/", async (req, res) => {
 });
 app.use("/articles", articlesRouter);
 app.use("/admin", adminRouter);
+app.use("/page/", renderPageRouter);
+
 // app.use("/protected", Protect, protectedRouter);
 app.use(errorHandler);
 

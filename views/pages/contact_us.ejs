@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../_headers') %>
+
+		<title>Blog</title>
+	</head>
+	<body>
+		<%- include('../_nav') %>
+
+		<!-- Contact Us -->
+
+		<section class="with-bg" id="contact">
+			<div>
+				<h1 class="section-main-heading animate-on-scroll">Contact Us</h1>
+				<p>
+					You can reach us by sending us an email with your request at
+					contactus@psystemexp.com. Alternatively, you can fill the contact form
+					below and submit so that we could reach to you in response.
+				</p>
+			</div>
+		</section>
+		<!-- Input fields -->
+
+		<section class="">
+			<form id="contact-form" class="flex flex-col px-5">
+				<div class="input-div">
+					<label for="name">Name</label>
+					<input
+						type="text"
+						name="name"
+						id="name"
+						placeholder="Name"
+						required />
+				</div>
+
+				<div class="input-div">
+					<label for="email">Your Email</label>
+					<input
+						type="email"
+						name="email"
+						id="email"
+						placeholder="Example@abc.com"
+						required />
+				</div>
+
+				<div class="input-div">
+					<label for="message">Your Message</label>
+					<textarea
+						type="message"
+						name="message"
+						id="message"
+						placeholder="Hello, I wanted to..."
+						cols="30"
+						rows="10"
+						required>
+					</textarea>
+				</div>
+				<div class="input-div">
+					<button type="submit" id="send-message" class="btn-primary">
+						Send
+					</button>
+				</div>
+			</form>
+		</section>
+		<%- include('../_footer') %>
+	</body>
+</html>
