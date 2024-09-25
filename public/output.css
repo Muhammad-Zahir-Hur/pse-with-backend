@@ -785,12 +785,8 @@ section.with-bg .section-main-heading,
 footer {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4rem;
   display: flex;
-  min-height: 80vh;
   width: 100%;
-  align-items: center;
-  justify-content: center;
 }
 
 .footer-link {
@@ -1294,6 +1290,14 @@ div.article sub {
   margin-top: 5rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.\!mb-5 {
+  margin-bottom: 1.25rem !important;
+}
+
 .block {
   display: block;
 }
@@ -1320,10 +1324,6 @@ div.article sub {
 
 .h-\[100vh\] {
   height: 100vh;
-}
-
-.h-auto {
-  height: auto;
 }
 
 .h-full {
@@ -1425,10 +1425,6 @@ div.article sub {
   gap: 0.5rem;
 }
 
-.gap-40 {
-  gap: 10rem;
-}
-
 .gap-\[5\%\] {
   gap: 5%;
 }
@@ -1493,11 +1489,6 @@ div.article sub {
   padding-bottom: 0.25rem;
 }
 
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -1517,15 +1508,6 @@ div.article sub {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .\!text-red-700 {
@@ -1599,10 +1581,6 @@ div.article sub {
     display: none;
   }
 
-  .md\:h-\[80vh\] {
-    height: 80vh;
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1613,15 +1591,5 @@ div.article sub {
 
   .md\:gap-0 {
     gap: 0px;
-  }
-
-  .md\:py-10 {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 }
