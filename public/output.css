@@ -679,7 +679,6 @@ section.with-bg .section-main-heading,
   width: 100%;
   max-width: 48rem;
   flex-direction: column;
-  padding-top: 2.5rem;
 }
 
 @media (min-width: 768px) {
@@ -700,7 +699,7 @@ section.with-bg .section-main-heading,
   padding-right: 0.25rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  padding-left: 2.5rem;
+  padding-left: 1.25rem;
 }
 
 /* Button styles */
@@ -873,7 +872,7 @@ section div,
 	footer div {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -1270,6 +1269,10 @@ div.article sub {
   margin-bottom: 1rem;
 }
 
+.\!mb-5 {
+  margin-bottom: 1.25rem !important;
+}
+
 .mb-20 {
   margin-bottom: 5rem;
 }
@@ -1288,14 +1291,6 @@ div.article sub {
 
 .mt-20 {
   margin-top: 5rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
-.\!mb-5 {
-  margin-bottom: 1.25rem !important;
 }
 
 .block {
