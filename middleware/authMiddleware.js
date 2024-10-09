@@ -8,16 +8,18 @@ const Protect = async (req, res, next) => {
 		return res.redirect("/");
 	}
 
-	const token = req.cookies.token;
-	const decoded = jwt.verify(token, authkey);
-	const admin = await Admin.findById(decoded.id).select("-password");
-
-	if (!admin) {
+	try {
+		const token = req.cookies.token;
+		const decoded = jwt.verify(token, authkey);
+		const admin = await Admin.findById(decoded.id).select("-password");
+		if (!admin) {
+			return res.redirect("/");
+		}
+		req.userType = 1;
+		next();
+	} catch (error) {
 		return res.redirect("/");
 	}
-	req.userType = 1;
-
-	next();
 };
 
 export default Protect;

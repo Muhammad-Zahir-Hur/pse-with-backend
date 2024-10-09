@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../_headers') %>
+		<title>PSE:Admin</title>
+	</head>
+	<body>
+		<%- include('../_nav') %>
+		<section>
+			<h1 class="section-main-heading">New Client</h1>
+			<form
+				action="/admin/protected/RegisterClient"
+				method="post"
+				class="flex flex-col justify-center items-center"
+				id="loginForm">
+				<div class="input-div">
+					<label for="imageUrl">Image URL</label>
+					<input
+						type="text"
+						name="imageUrl"
+						id="imageUrl"
+						placeholder="image url"
+						required />
+				</div>
+				<div class="input-div">
+					<button type="submit" id="" class="btn-primary">Send</button>
+				</div>
+			</form>
+		</section>
+	</body>
+</html>

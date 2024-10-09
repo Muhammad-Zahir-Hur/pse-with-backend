@@ -8,7 +8,9 @@ import {
 import {
 	RegisterAdmin,
 	AdminHomePage,
-	newAdminPage
+	newAdminPage,
+	newClientPage,
+	RegisterClient,
 } from "../controllers/adminController.js";
 
 import express from "express";
@@ -23,6 +25,8 @@ router.delete("/delete/:slug", deleteBlog);
 //protected admin routes
 router.get("/newAdmin", newAdminPage);
 router.post("/newAdmin", RegisterAdmin);
+router.get("/newClient", newClientPage);
+router.post("/RegisterClient", RegisterClient);
 router.get("/", AdminHomePage);
 
 export default router;

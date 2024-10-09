@@ -20,21 +20,18 @@ router.get("/", async (req, res) => {
 		// if NOT True proceed
 		try {
 			const token = req.cookies.token;
-
 			const decoded = jwt.verify(token, authkey);
 			const admin = await Admin.findById(decoded.id).select("-password");
-	
+
 			if (!admin) {
 				return res.render("admin/login");
 			}
 			return res.redirect("/admin/protected/");
 		} catch (error) {
-			return res.render("admin/login")
+			return res.render("admin/login");
 		}
-
 	}
 	const name = process.env.FIRST_ADMIN;
-	console.log(name);
 	const salt = await bcrypt.genSalt(10);
 	const password = process.env.FIRST_ADMIN_PASSWORD;
 

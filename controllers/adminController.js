@@ -1,5 +1,6 @@
 import Admin from "../models/adminModel.js";
 import Article from "../models/articleModel.js";
+import Client from "../models/clientModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import "dotenv/config";
@@ -64,11 +65,35 @@ const AdminHomePage = async (req, res) => {
 	res.status(200).render("admin/index", { articles });
 };
 
-const newAdminPage = async (req, res) => {
+const newAdminPage = (req, res) => {
 	res.status(200).render("admin/newAdmin");
+};
+
+const newClientPage = (req, res) => {
+	return res.status(200).render("admin/newClient");
+};
+
+const RegisterClient = async (req, res, next) => {
+	const imageUrl = req.body.imageUrl;
+	console.log(req.body);
+	try {
+		await Client.create({
+			url: imageUrl,
+		});
+		return res.redirect("/");
+	} catch (error) {
+		next(error);
+	}
 };
 
 function generateToken(id) {
 	return jwt.sign({ id }, authkey, { expiresIn: "30d" });
 }
-export { RegisterAdmin, LoginAdmin, AdminHomePage, newAdminPage };
+export {
+	RegisterAdmin,
+	LoginAdmin,
+	AdminHomePage,
+	newAdminPage,
+	newClientPage,
+	RegisterClient,
+};
