@@ -1392,6 +1392,10 @@ div.article sub {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -1422,6 +1426,14 @@ div.article sub {
 
 .gap-\[5\%\] {
   gap: 5%;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-20 {
+  gap: 5rem;
 }
 
 .self-center {
@@ -1524,6 +1536,10 @@ div.article sub {
   transition-duration: 150ms;
 }
 
+.delay-100 {
+  transition-delay: 100ms;
+}
+
 .delay-150 {
   transition-delay: 150ms;
 }
@@ -1538,6 +1554,18 @@ div.article sub {
 
 .delay-75 {
   transition-delay: 75ms;
+}
+
+.delay-\[\] {
+  transition-delay: ;
+}
+
+.delay-\[\<\] {
+  transition-delay: <;
+}
+
+.delay-\[\<\%\] {
+  transition-delay: <%;
 }
 
 /* blogs shadows */
@@ -1556,6 +1584,10 @@ div.article sub {
 @media (min-width: 375px) {
   .sm\:w-60 {
     width: 15rem;
+  }
+
+  .sm\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 
@@ -1580,11 +1612,21 @@ div.article sub {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
 
   .md\:gap-0 {
     gap: 0px;
+  }
+}
+
+@media (min-width: 976px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

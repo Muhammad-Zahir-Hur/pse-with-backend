@@ -6,6 +6,7 @@ import adminRouter from "./routes/adminRoutes.js";
 import connectDB from "./config/db.js";
 import methodOverride from "method-override";
 import Article from "./models/articleModel.js";
+import Client from "./models/clientModel.js";
 import cookieParser from "cookie-parser";
 // const dotenv = env.config();
 const PORT = 5000;
@@ -23,7 +24,9 @@ app.use(cookieParser());
 
 app.get("/", async (req, res) => {
 	const articles = await Article.find({}).sort({ createdAt: "desc" });
-	res.render("index", { articles });
+	const clients = await Client.find({}).sort({ createdAt: "desc" });
+	console.log(clients);
+	res.render("index", { articles, clients });
 });
 app.use("/articles", articlesRouter);
 app.use("/admin", adminRouter);

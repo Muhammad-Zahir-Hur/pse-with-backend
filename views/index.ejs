@@ -166,6 +166,25 @@
 			</div>
 		</section>
 
+		<!-- Clients -->
+
+		<section>
+			<div class="service animate-on-scroll">
+				<h1 class="section-main-heading animate-on-scroll">Our Clients</h1>
+			</div>
+			<div class="images grid md:grid-cols-3 grid-cols-1 mt-10 gap-20">
+				<div class="service animate-on-scroll delay-75">
+					<img src="/logo.png" alt="" />
+				</div>
+				<% clients.forEach((client)=>{ %>
+				<div
+					class="service animate-on-scroll delay-[<%= `${clients.indexOf(client)*0.25 +1}s` %>] flex justify-center items-center">
+					<img src="<%= client.imageUrl %>" alt=" <%= client.altText %>" />
+				</div>
+				<% }) %>
+			</div>
+		</section>
+
 		<!-- Footer -->
 
 		<%- include('_footer') %>

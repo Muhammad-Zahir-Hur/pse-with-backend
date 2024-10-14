@@ -62,7 +62,8 @@ const LoginAdmin = async (req, res, next) => {
 
 const AdminHomePage = async (req, res) => {
 	const articles = await Article.find({}).sort({ createdAt: "desc" });
-	res.status(200).render("admin/index", { articles });
+	const clients = await Client.find({}).sort({ createdAt: "desc" });
+	res.status(200).render("admin/index", { articles, clients });
 };
 
 const newAdminPage = (req, res) => {
@@ -74,13 +75,19 @@ const newClientPage = (req, res) => {
 };
 
 const RegisterClient = async (req, res, next) => {
+	console.log(req.body);
 	const imageUrl = req.body.imageUrl;
+	const websiteUrl = req.body.websiteUrl;
+	const altText = req.body.altText;
+
 	console.log(req.body);
 	try {
 		await Client.create({
-			url: imageUrl,
+			imageUrl,
+			websiteUrl,
+			altText,
 		});
-		return res.redirect("/");
+		return res.redirect("/admin");
 	} catch (error) {
 		next(error);
 	}
