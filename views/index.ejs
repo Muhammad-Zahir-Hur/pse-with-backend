@@ -4,7 +4,7 @@
 		<%- include('_headers') %>
 		<title>Power System Experts</title>
 	</head>
-	<body class="">
+	<body>
 		<header class="min-h-[100vh] w-full" id="home">
 			<%- include('_nav') %>
 			<!-- HERO section -->
@@ -47,9 +47,10 @@
 		</section>
 		<!-- List of services -->
 		<section>
-			<div class="grid grid-cols-1 gap-10 justify-center items-center mt-20">
+			<div
+				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-5 justify-center items-center mt-20">
 				<div class="service animate-on-scroll">
-					<h2>Power System Planning</h2>
+					<h2 class="service-heading">Power System Planning</h2>
 					<p>
 						We offer a complete range of planning services to ensure the
 						reliability, stability, and cost-efficiency of your power systems to
@@ -58,7 +59,7 @@
 				</div>
 
 				<div class="service animate-on-scroll delay-75">
-					<h2>Grid Interconnection</h2>
+					<h2 class="service-heading">Grid Interconnection</h2>
 					<p>
 						We facilitate the smooth interconnection of renewable energy sources
 						and other generation assets with the grid. From grid impact analysis
@@ -68,7 +69,7 @@
 				</div>
 
 				<div class="service animate-on-scroll delay-75">
-					<h2>Substation Design</h2>
+					<h2 class="service-heading">Substation Design</h2>
 					<p>
 						We facilitate the smooth interconnection of renewable energy sources
 						and other generation assets with the grid. From grid impact analysis
@@ -78,7 +79,7 @@
 				</div>
 
 				<div class="service animate-on-scroll delay-150">
-					<h2>Protection and Control</h2>
+					<h2 class="service-heading">Protection and Control</h2>
 					<p>
 						Robust protection and control solutions designed to safeguard your
 						electrical assets and ensure the reliable operation of your power
@@ -90,7 +91,7 @@
 				</div>
 
 				<div class="service animate-on-scroll delay-200">
-					<h2>Operational Studies</h2>
+					<h2 class="service-heading">Operational Studies</h2>
 					<p>
 						At Power System Experts, we provide comprehensive operational
 						studies that ensure the optimal performance and stability of your
@@ -103,7 +104,7 @@
 				</div>
 
 				<div class="service animate-on-scroll delay-300">
-					<h2>Capacity Building and Training</h2>
+					<h2 class="service-heading">Capacity Building and Training</h2>
 					<p>
 						At Power System Experts, we are committed to advancing the skills
 						and expertise of power system engineers. Through our targeted
@@ -114,7 +115,6 @@
 				</div>
 			</div>
 		</section>
-
 		<!-- About US section -->
 		<section class="with-bg" id="about">
 			<div>
@@ -133,9 +133,9 @@
 		<!-- About us details -->
 
 		<section>
-			<div class="grid grid-cols-1 gap-10 justify-center items-center mt-20">
-				<div class="service animate-on-scroll">
-					<h2>Our Mission</h2>
+			<div class="grid grid-cols-1 gap-10 justify-start items-start mt-20">
+				<div class="about-us-detail animate-on-scroll">
+					<h2 class="about-us-detail-heading">Our Mission</h2>
 					<p>
 						Our Mission is enable our clients for establishing safer, reliable
 						and cleaner power systems across the planet by providing them with
@@ -144,16 +144,16 @@
 					</p>
 				</div>
 
-				<div class="service animate-on-scroll delay-75">
-					<h2>Our Vision</h2>
+				<div class="about-us-detail animate-on-scroll delay-75">
+					<h2 class="about-us-detail-heading">Our Vision</h2>
 					<p>
 						Our vision is to be a globally recognized power system solutions
 						provider.
 					</p>
 				</div>
 
-				<div class="service animate-on-scroll delay-150">
-					<h2>Our Team</h2>
+				<div class="about-us-detail animate-on-scroll delay-150">
+					<h2 class="about-us-detail-heading">Our Team</h2>
 					<p>
 						A team of power system engineers with a collective experience of
 						over 50 years in extensive design and integration of utility scale
@@ -169,16 +169,16 @@
 		<!-- Clients -->
 
 		<section>
-			<div class="service animate-on-scroll">
+			<div class="animate-on-scroll">
 				<h1 class="section-main-heading animate-on-scroll">Our Clients</h1>
 			</div>
 			<div class="images grid md:grid-cols-3 grid-cols-1 mt-10 gap-20">
-				<div class="service animate-on-scroll delay-75">
+				<div class="animate-on-scroll delay-75">
 					<img src="/logo.png" alt="" />
 				</div>
 				<% clients.forEach((client)=>{ %>
 				<div
-					class="service animate-on-scroll delay-[<%= `${clients.indexOf(client)*0.25 +1}s` %>] flex justify-center items-center">
+					class="animate-on-scroll delay-[<%= `${clients.indexOf(client)*0.25 +1}s` %>] flex justify-center items-center">
 					<img src="<%= client.imageUrl %>" alt=" <%= client.altText %>" />
 				</div>
 				<% }) %>
