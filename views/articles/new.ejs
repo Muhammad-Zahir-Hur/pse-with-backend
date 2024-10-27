@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<%- include('../_headers') %>
-		<title>Blog</title>
+		<title>Article</title>
 	</head>
 	<body>
 		<%- include('../_nav') %>
@@ -10,7 +10,7 @@
 		<section>
 			<h1 class="section-main-heading">New article</h1>
 
-			<form action="/articles/protected/new" method="POST">
+			<form action="/protected/newArticle" method="POST">
 				<%- include('_form_field')%>
 			</form>
 			<p>Error: <%= article?.error?.stack %></p>

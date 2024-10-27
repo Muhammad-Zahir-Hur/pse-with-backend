@@ -1,0 +1,76 @@
+<!-- create a route, a controller for this page and render the all the clients here, the clients should be allowed to be added, updated, deleted. -->
+<!-- create a route, a controller for this page and render the all the clients here, the clients should be allowed to be added, updated, deleted. -->
+
+<!-- create a route, a controller for this page and render the all the clients here, the clients should be allowed to be added, updated, deleted. -->
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<%- include('../_headers') %>
+		<title>Power System Experts</title>
+	</head>
+
+	<!-- Navigation Bar -->
+	<body class="relative">
+		<%- include('../_nav') %>
+
+		<div class="flex justify-center" id="top">
+			<a href="/protected/newClient/" class="btn-primary">New Client</a>
+		</div>
+
+		<section id="admins">
+			<h1 class="section-main-heading mb-20 animate-on-scroll">Clients</h1>
+
+			<div class="flex flex-col justify-start items-center">
+				<% clients.forEach((client)=>{ %>
+				<div class="service flex justify-center items-center">
+					<img src="<%= client.imageUrl %>" alt=" <%= client.altText %>" />
+				</div>
+
+				<div>
+					<button
+						onclick="openDeleteModal('<%=client.altText%>')"
+						class="!text-red-700 inline">
+						DELETE
+					</button>
+				</div>
+				<div
+					id="<%=client.altText%>"
+					class="h-[100vh] max-w-full bg-white fixed top-0 left-0 flex-col justify-center items-center mx-auto hidden"
+					style="transform: translate()">
+					<p class="p-4">DO YOU REALLY WANT TO DELETE THE Client:</p>
+					<h2 class="section-sub-heading"><%= client.altText%></h2>
+
+					<div class="flex flex-col w-min">
+						<form
+							action="/protected/deleteClient/<%= client.companyName %>?_method=DELETE"
+							method="post">
+							<!-- <button type="submit" class="!text-red-700">DELETE</button> -->
+
+							<button type="submit" class="!bg-red-700 btn-secondary">
+								Yes DELETE IT
+							</button>
+						</form>
+						<button class="btn-primary" onclick="closeDeleteModal()">
+							Cancel
+						</button>
+					</div>
+				</div>
+				<% }) %>
+			</div>
+		</section>
+
+		<%- include('../_footer') %>
+		<script>
+			let deleteModal;
+			function openDeleteModal(slug) {
+				deleteModal = document.getElementById(slug);
+				deleteModal.classList.replace("hidden", "flex");
+			}
+			function closeDeleteModal(slug) {
+				deleteModal.classList.replace("flex", "hidden");
+				deleteModal = "";
+			}
+		</script>
+	</body>
+</html>

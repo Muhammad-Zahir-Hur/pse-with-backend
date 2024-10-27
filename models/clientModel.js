@@ -5,9 +5,9 @@ const ClientSchema = mongoose.Schema({
 		type: String,
 		required: [true, "Please Give an image url for the Client company"],
 	},
-	websiteUrl: {
+	companyName: {
 		type: String,
-		required: [true, "Please Give a Url for the website of the Client company"],
+		required: [true, "Please provide the name of the company"],
 	},
 	altText: {
 		type: String,

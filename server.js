@@ -8,6 +8,8 @@ import methodOverride from "method-override";
 import Article from "./models/articleModel.js";
 import Client from "./models/clientModel.js";
 import cookieParser from "cookie-parser";
+import Protect from "./middleware/authMiddleware.js";
+
 // const dotenv = env.config();
 const PORT = 5000;
 const app = express();
@@ -33,6 +35,7 @@ app.use("/admin", adminRouter);
 app.use("/contact_us", (req, res) => {
 	res.render("pages/contact_us");
 });
+app.use("/protected", Protect, protectedRouter);
 
 // app.use("/protected", Protect, protectedRouter);
 app.use(errorHandler);

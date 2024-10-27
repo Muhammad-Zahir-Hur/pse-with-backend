@@ -60,7 +60,7 @@
 	}
 
 	.section-main-heading {
-		@apply text-4xl lg:text-5xl  font-[900] my-10 text-[color:var(--secondary)] text-center;
+		@apply text-5xl lg:text-6xl  font-[800] my-10 text-[color:var(--secondary)] text-center;
 	}
 
 	/* Input styles */

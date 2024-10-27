@@ -6,10 +6,19 @@ import jwt from "jsonwebtoken";
 import "dotenv/config";
 const authkey = process.env.JWT_SECRET;
 
+const allAdminsPage = async (req, res) => {
+	const superAdmin = process.env.FIRST_ADMIN;
+	await Admin.find();
+	const admins = await Admin.find({ name: { $ne: superAdmin } }).sort({
+		createdAt: "desc",
+	});
+	res.status(200).render("admin/all_admins", { admins });
+};
+
 const RegisterAdmin = async (req, res, next) => {
 	console.log("inside os RegisterAdmin route");
 	const { name, password } = req.body;
-	console.log(`fetching name and password:..... name: ${name}.......
+	console.log(`fetching name and password : ......... name: ${name}.......
 	password: ${password}`);
 	try {
 		if (!name || !password) {
@@ -53,6 +62,7 @@ const LoginAdmin = async (req, res, next) => {
 	const { name, password } = req.body;
 
 	const admin = await Admin.findOne({ name });
+	console.log(admin);
 	if (admin && (await bcrypt.compare(password, admin.password))) {
 		res.cookie("token", generateToken(admin._id));
 		return res.redirect("admin/protected/");
@@ -70,37 +80,30 @@ const newAdminPage = (req, res) => {
 	res.status(200).render("admin/newAdmin");
 };
 
-const newClientPage = (req, res) => {
-	return res.status(200).render("admin/newClient");
-};
-
-const RegisterClient = async (req, res, next) => {
-	console.log(req.body);
-	const imageUrl = req.body.imageUrl;
-	const websiteUrl = req.body.websiteUrl;
-	const altText = req.body.altText;
-
-	console.log(req.body);
-	try {
-		await Client.create({
-			imageUrl,
-			websiteUrl,
-			altText,
-		});
-		return res.redirect("/admin");
-	} catch (error) {
-		next(error);
-	}
-};
-
 function generateToken(id) {
 	return jwt.sign({ id }, authkey, { expiresIn: "30d" });
 }
+
+const deleteAdmin = async (req, res, next) => {
+	const superAdmin = process.env.FIRST_ADMIN;
+	const admin_to_delete = req.params.name;
+	if (admin_to_delete == superAdmin) {
+		return res.redirect("/");
+	}
+	try {
+		await Admin.findOneAndDelete({ name: req.params.name });
+
+		res.redirect("/");
+	} catch (error) {
+		// res.send({ error: error.message, stack: error.stack });
+		return next(error);
+	}
+};
 export {
 	RegisterAdmin,
 	LoginAdmin,
 	AdminHomePage,
 	newAdminPage,
-	newClientPage,
-	RegisterClient,
+	allAdminsPage,
+	deleteAdmin,
 };

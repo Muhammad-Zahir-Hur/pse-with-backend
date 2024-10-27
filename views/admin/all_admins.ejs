@@ -1,0 +1,77 @@
+<!-- create a route, a controller for this page and render the all the clients here, the clients should be allowed to be added, updated, deleted. -->
+
+<!-- create a route, a controller for this page and render the all the clients here, the clients should be allowed to be added, updated, deleted. -->
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<%- include('../_headers') %>
+		<title>Power System Experts</title>
+	</head>
+
+	<!-- Navigation Bar -->
+	<body class="relative">
+		<%- include('../_nav') %>
+
+		<div class="flex justify-center" id="top">
+			<a href="/protected/newAdmin/" class="btn-primary">New Admin</a>
+		</div>
+
+		<section id="admins">
+			<h1 class="section-main-heading mb-20 animate-on-scroll">Admin</h1>
+
+			<div class="flex flex-col justify-start items-center">
+				<% admins.forEach(admin=>{ %>
+				<div
+					class="grid grid-rows-[6fr 1fr 1fr 1fr 1fr] md:grid-cols-[6fr 1fr 1fr 1fr 1fr] items-center">
+					<p class=" !text-left"><%= admin.name %></p>
+
+					<div>
+						<button
+							onclick="openDeleteModal('<%=admin.name%>')"
+							class="!text-red-700 inline">
+							DELETE
+						</button>
+					</div>
+
+					<div
+						id="<%=admin.name%>"
+						class="h-[100vh] max-w-full bg-white fixed top-0 left-0 flex-col justify-center items-center mx-auto hidden"
+						style="transform: translate()">
+						<p class="p-4">DO YOU REALLY WANT TO DELETE ADMIN:</p>
+						<h2 class="section-sub-heading"><%= admin.name%></h2>
+
+						<div class="flex flex-col w-min">
+							<form
+								action="/protected/deleteAdmin/<%= admin.name %>?_method=DELETE"
+								method="post">
+								<!-- <button type="submit" class="!text-red-700">DELETE</button> -->
+
+								<button type="submit" class="!bg-red-700 btn-secondary">
+									Yes DELETE IT
+								</button>
+							</form>
+							<button class="btn-primary" onclick="closeDeleteModal()">
+								Cancel
+							</button>
+						</div>
+					</div>
+				</div>
+				<% }) %>
+			</div>
+		</section>
+
+		<%- include('../_footer') %>
+		<script>
+			let deleteModal;
+			function openDeleteModal(slug) {
+				deleteModal = document.getElementById(slug);
+				deleteModal.classList.replace("hidden", "flex");
+			}
+			function closeDeleteModal(slug) {
+				deleteModal.classList.replace("flex", "hidden");
+				deleteModal = "";
+			}
+		</script>
+	</body>
+</html>

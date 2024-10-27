@@ -1,6 +1,11 @@
 import Article from "../models/articleModel.js";
 // import jwt from "jsonwebtoken";
 
+const allArticlesPage = async (req, res) => {
+	const articles = await Article.find({}).sort({ createdAt: "desc" });
+	res.status(200).render("articles/all_articles", { articles });
+};
+
 const newArticlePage = (req, res) => {
 	res.render("articles/new", {
 		article: { title: "", description: "", markdown: "" },
@@ -8,7 +13,7 @@ const newArticlePage = (req, res) => {
 };
 
 // post at /articles
-const newBlog = async (req, res) => {
+const newArticle = async (req, res) => {
 	const { title, description, markdown } = req.body;
 
 	try {
@@ -31,12 +36,12 @@ const newBlog = async (req, res) => {
 	return;
 };
 
-const getBlogs = async (req, res) => {
+const getArticles = async (req, res) => {
 	const articles = await Article.find({}).sort({ createdAt: "desc" });
 	res.status(200).render("articles/index", { articles });
 };
 
-const showBlog = async (req, res, next) => {
+const showArticle = async (req, res, next) => {
 	try {
 		const article = await Article.findOne({ slug: req.params.slug });
 		res.render("articles/show", { article });
@@ -45,13 +50,13 @@ const showBlog = async (req, res, next) => {
 	}
 };
 
-const editBlog = async (req, res) => {
+const editArticle = async (req, res) => {
 	const article = await Article.findOne({ slug: req.params.slug });
 
 	res.render("articles/edit", { article });
 };
 
-const updateBlog = async (req, res) => {
+const updateArticle = async (req, res) => {
 	const article = await Article.findOne({ slug: req.params.slug });
 
 	const { title, description, markdown } = req.body;
@@ -64,7 +69,7 @@ const updateBlog = async (req, res) => {
 	res.redirect("/admin/protected/");
 };
 
-const deleteBlog = async (req, res) => {
+const deleteArticle = async (req, res) => {
 	try {
 		await Article.findOneAndDelete({ slug: req.params.slug });
 
@@ -75,11 +80,12 @@ const deleteBlog = async (req, res) => {
 };
 
 export {
-	newBlog,
-	getBlogs,
-	showBlog,
+	newArticle,
+	getArticles,
+	showArticle,
 	newArticlePage,
-	editBlog,
-	updateBlog,
-	deleteBlog,
+	editArticle,
+	updateArticle,
+	deleteArticle,
+	allArticlesPage,
 };

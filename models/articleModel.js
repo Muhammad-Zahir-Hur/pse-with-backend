@@ -14,7 +14,7 @@ const ArticleSchema = mongoose.Schema({
 	},
 	markdown: {
 		type: String,
-		required: [true, "Please enter the markdown for the blog"],
+		required: [true, "Please enter the markdown for the Article"],
 	},
 	sanitizedHtml: {
 		type: String,
