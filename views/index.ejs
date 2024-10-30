@@ -47,8 +47,7 @@
 		</section>
 		<!-- List of services -->
 		<section>
-			<div
-				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-5 justify-center items-center mt-20">
+			<div class="grid-cols-s1-m2-l3">
 				<div class="service animate-on-scroll">
 					<h2 class="service-heading">Power System Planning</h2>
 					<p>
@@ -133,7 +132,7 @@
 		<!-- About us details -->
 
 		<section>
-			<div class="grid grid-cols-1 gap-10 justify-start items-start mt-20">
+			<div class="grid-cols-s1-m2-l3">
 				<div class="about-us-detail animate-on-scroll">
 					<h2 class="about-us-detail-heading">Our Mission</h2>
 					<p>
@@ -168,7 +167,7 @@
 
 		<!-- Clients -->
 
-		<section>
+		<section class="with-bg">
 			<div class="animate-on-scroll">
 				<h1 class="section-main-heading animate-on-scroll">Our Clients</h1>
 			</div>
@@ -178,7 +177,7 @@
 				</div>
 				<% clients.forEach((client)=>{ %>
 				<div
-					class="animate-on-scroll delay-[<%= `${clients.indexOf(client)*0.25 +1}s` %>] flex justify-center items-center">
+					class="animate-on-scroll delay-[<%= `${100*(clients.indexOf(client)*(0.25) +1)}ms` %>] flex justify-center items-center rounded-xl">
 					<img src="<%= client.imageUrl %>" alt=" <%= client.altText %>" />
 				</div>
 				<% }) %>

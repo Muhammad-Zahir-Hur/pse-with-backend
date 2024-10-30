@@ -9,16 +9,18 @@
 	<body class="relative">
 		<%- include('../_nav') %>
 
-		<div class="flex justify-center gap-5 flex-col" id="top">
-			<a href="/protected/allArticlesPage/" class="nav-link">Articles</a>
-			<a href="/protected/allAdminsPage/" class="nav-link">Admins</a>
-			<a href="/protected/allClientsPage" class="nav-link">Clients</a>
-			<!-- <a href="/articles/protected/new/" class="btn-primary">New Article</a>
-			<a href="/admin/protected/newAdmin/" class="btn-primary">New Admin</a>
-			<a href="/admin/protected/newClient/" class="btn-primary">New Client</a> -->
-		</div>
-
-
+		<section>
+			<div
+				class="flex justify-center gap-5 flex-col md:flex-row min-h-[30vh] items-center my-20"
+				id="top">
+				<a href="/protected/allArticlesPage/" class="nav-link">Articles</a>
+				<a href="/protected/allAdminsPage/" class="nav-link">Admins</a>
+				<a href="/protected/allClientsPage" class="nav-link">Clients</a>
+				<!-- <a href="/articles/protected/new/" class="btn-primary">New Article</a>
+	<a href="/admin/protected/newAdmin/" class="btn-primary">New Admin</a>
+	<a href="/admin/protected/newClient/" class="btn-primary">New Client</a> -->
+			</div>
+		</section>
 
 		<%- include('../_footer') %>
 		<script>

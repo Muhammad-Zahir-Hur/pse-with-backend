@@ -29,7 +29,7 @@
 		border: solid var(--primary-low-opacity) 1px;
 	}
 
-	/* Blog styles */
+	/* Blog styles and services*/
 	.blog {
 		text-align: center;
 	}
@@ -40,6 +40,7 @@
 	.service {
 		@apply min-h-fit md:min-h-[80vh] px-10 pt-10;
 	}
+
 
 	.blog h2,
 	.service-heading,
@@ -308,4 +309,10 @@
 .blog-shadowed {
 	box-shadow: secondary-low-opacity -2px 4px 6px;
 	@apply rounded;
+}
+
+/* utility classes */
+
+.grid-cols-s1-m2-l3 {
+	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-5 justify-start items-start mt-20;
 }

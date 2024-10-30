@@ -21,39 +21,41 @@
 		<section id="admins">
 			<h1 class="section-main-heading mb-20 animate-on-scroll">Clients</h1>
 
-			<div class="flex flex-col justify-start items-center">
+			<div class="images grid md:grid-cols-3 grid-cols-1 mt-10 gap-20">
 				<% clients.forEach((client)=>{ %>
-				<div class="service flex justify-center items-center">
-					<img src="<%= client.imageUrl %>" alt=" <%= client.altText %>" />
-				</div>
-
 				<div>
-					<button
-						onclick="openDeleteModal('<%=client.altText%>')"
-						class="!text-red-700 inline">
-						DELETE
-					</button>
-				</div>
-				<div
-					id="<%=client.altText%>"
-					class="h-[100vh] max-w-full bg-white fixed top-0 left-0 flex-col justify-center items-center mx-auto hidden"
-					style="transform: translate()">
-					<p class="p-4">DO YOU REALLY WANT TO DELETE THE Client:</p>
-					<h2 class="section-sub-heading"><%= client.altText%></h2>
+					<div class="flex justify-center items-center">
+						<img src="<%= client.imageUrl %>" alt=" <%= client.altText %>" />
+					</div>
 
-					<div class="flex flex-col w-min">
-						<form
-							action="/protected/deleteClient/<%= client.companyName %>?_method=DELETE"
-							method="post">
-							<!-- <button type="submit" class="!text-red-700">DELETE</button> -->
-
-							<button type="submit" class="!bg-red-700 btn-secondary">
-								Yes DELETE IT
-							</button>
-						</form>
-						<button class="btn-primary" onclick="closeDeleteModal()">
-							Cancel
+					<div>
+						<button
+							onclick="openDeleteModal('<%=client.altText%>')"
+							class="!text-red-700 inline">
+							DELETE
 						</button>
+					</div>
+					<div
+						id="<%=client.altText%>"
+						class="h-[100vh] max-w-full bg-white fixed top-0 left-0 flex-col justify-center items-center mx-auto hidden"
+						style="transform: translate()">
+						<p class="p-4">DO YOU REALLY WANT TO DELETE THE Client:</p>
+						<h2 class="section-sub-heading"><%= client.altText%></h2>
+
+						<div class="flex flex-col w-min">
+							<form
+								action="/protected/deleteClient/<%= client.companyName %>?_method=DELETE"
+								method="post">
+								<!-- <button type="submit" class="!text-red-700">DELETE</button> -->
+
+								<button type="submit" class="!bg-red-700 btn-secondary">
+									Yes DELETE IT
+								</button>
+							</form>
+							<button class="btn-primary" onclick="closeDeleteModal()">
+								Cancel
+							</button>
+						</div>
 					</div>
 				</div>
 				<% }) %>
