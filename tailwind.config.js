@@ -9,13 +9,13 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				"text-color-p": "#818181",
+				"text-color-light-mood-p": "#818181",
 				primary: "#f5be47",
 				secondary: "#0a183a",
 				"text-bg": "#000",
-				"text-color-dark": "white",
-				"secondary-low-opacity": "#0a183aa3",
-				"primary-low-opacity": "#f5be47a3",
+				"text-color-dark-mood": "white",
+				"secondary-light": "#747987",
+				"primary-light": "#baa982",
 			},
 		},
 	},

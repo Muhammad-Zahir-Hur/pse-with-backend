@@ -4,13 +4,13 @@
 
 @layer base {
 	:root {
-		--text-color-p: #818181;
+		/* --text-color-light-mood-p: #818181;
 		--primary: #f5be47;
 		--secondary: #0a183a;
 		--text-bg: #000;
-		--text-color-dark: white;
-		--secondary-low-opacity: #0a183aa3;
-		--primary-low-opacity: #f5be47a3;
+		--text-color-dark-mood: white;
+		--secondary-light: #747987;
+		--primary-light: #baa982; */
 		--font-paragraph: "Montserrat";
 	}
 }
@@ -18,15 +18,15 @@
 @layer components {
 	/* Nav styles */
 	.nav-link {
-		@apply rounded-full px-2 font-bold py-1 hover:bg-secondary hover:text-text-color-dark hover:scale-110 transition text-center w-[40%];
+		@apply rounded-full px-2 font-bold py-1 hover:bg-secondary hover:text-text-color-dark-mood hover:scale-110 transition text-center w-[40%];
 		font-family: "Josefin Sans", sans-serif;
 	}
 
 	nav {
 		backdrop-filter: blur(30px);
 		/* box-shadow: 0 0 90px primary); */
-		/* background-color: primary-low-opacity); */
-		border: solid var(--primary-low-opacity) 1px;
+		/* background-color: primary-light); */
+		border: solid primary-light 1px;
 	}
 
 	/* Blog styles and services*/
@@ -35,12 +35,11 @@
 	}
 	.service,
 	.about-us-detail {
-		@apply bg-white rounded-lg;
+		@apply bg-white rounded-lg px-10 pt-10;
 	}
 	.service {
-		@apply min-h-fit md:min-h-[80vh] px-10 pt-10;
+		@apply min-h-fit md:min-h-[80vh];
 	}
-
 
 	.blog h2,
 	.service-heading,
@@ -50,7 +49,7 @@
 
 	.blog p,
 	.service p {
-		@apply text-text-color-p;
+		@apply text-text-color-light-mood-p;
 	}
 
 	/* Section styles */
@@ -58,7 +57,6 @@
 		@apply bg-primary py-20;
 	}
 
-	section.with-bg .section-main-heading,
 	section.with-bg p {
 		@apply text-secondary text-center;
 	}
@@ -173,31 +171,31 @@
 
 	/* General Content */
 	div.article {
-		@apply text-base leading-relaxed text-[text-color-p];
+		@apply text-base leading-relaxed text-[text-color-light-mood-p];
 	}
 
 	/* Paragraphs */
 	div.article p {
-		@apply mb-6 text-[text-color-p];
+		@apply mb-6 text-[text-color-light-mood-p];
 	}
 
 	/* Anchors */
 	div.article a {
-		@apply text-primary underline hover:text-[primary-low-opacity];
+		@apply text-primary underline hover:text-[primary-light];
 	}
 
 	/* Blockquotes */
 	div.article blockquote {
-		@apply border-l-4 border-secondary pl-4 italic my-6 text-[text-color-dark] bg-[secondary-low-opacity] p-4 rounded;
+		@apply border-l-4 border-secondary pl-4 italic my-6 text-[text-color-dark-mood] bg-[secondary-light] p-4 rounded;
 	}
 
 	/* Code Blocks */
 	div.article pre {
-		@apply bg-[secondary-low-opacity] text-[text-color-dark] p-4 rounded mb-6 overflow-auto;
+		@apply bg-[secondary-light] text-[text-color-dark-mood] p-4 rounded mb-6 overflow-auto;
 	}
 
 	div.article code {
-		@apply bg-[secondary-low-opacity] text-[text-color-dark] px-2 py-1 rounded;
+		@apply bg-[secondary-light] text-[text-color-dark-mood] px-2 py-1 rounded;
 	}
 
 	/* Lists */
@@ -225,20 +223,20 @@
 
 	/* Tables */
 	div.article table {
-		@apply w-full my-6 border-collapse bg-secondary-low-opacity rounded overflow-hidden;
+		@apply w-full my-6 border-collapse bg-secondary-light rounded overflow-hidden;
 	}
 
 	div.article th,
 	div.article td {
-		@apply border border-secondary-low-opacity px-4 py-2 text-left text-text-color-dark;
+		@apply border border-secondary-light px-4 py-2 text-left text-text-color-dark-mood;
 	}
 
 	div.article th {
-		@apply bg-secondary-low-opacity text-text-color-dark;
+		@apply bg-secondary-light text-text-color-dark-mood;
 	}
 
 	div.article tr:nth-child(even) {
-		@apply bg-[primary-low-opacity];
+		@apply bg-[primary-light];
 	}
 
 	/* Horizontal Rules */
@@ -248,21 +246,21 @@
 
 	/* Strong and Emphasis */
 	div.article strong {
-		@apply font-bold text-[text-color-p];
+		@apply font-bold text-[text-color-light-mood-p];
 	}
 
 	div.article em {
-		@apply italic text-[text-color-p];
+		@apply italic text-[text-color-light-mood-p];
 	}
 
 	/* Inline Quotes */
 	div.article q {
-		@apply text-[text-color-p] italic;
+		@apply text-[text-color-light-mood-p] italic;
 	}
 
 	/* Links */
 	div.article a {
-		@apply text-primary underline hover:text-[primary-low-opacity];
+		@apply text-primary underline hover:text-[primary-light];
 	}
 
 	/* Superscript and Subscript */
@@ -307,7 +305,7 @@
 /* blogs shadows */
 
 .blog-shadowed {
-	box-shadow: secondary-low-opacity -2px 4px 6px;
+	box-shadow: secondary-light -2px 4px 6px;
 	@apply rounded;
 }
 
