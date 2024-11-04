@@ -11,12 +11,10 @@ const newClientPage = (req, res) => {
 };
 
 const RegisterClient = async (req, res, next) => {
-	console.log(req.body);
 	const imageUrl = req.body.imageUrl;
 	const companyName = req.body.companyName;
 	const altText = req.body.altText;
 
-	console.log(req.body);
 	try {
 		await Client.create({
 			imageUrl,

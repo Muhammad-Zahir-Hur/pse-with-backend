@@ -301,6 +301,9 @@
 		transition-duration: 1000ms;
 	}
 }
+.section-main-p {
+	@apply font-['Montserrat'] text-xl text-center mb-4;
+}
 
 /* blogs shadows */
 

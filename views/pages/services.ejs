@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Service</title>
+		<%- include('../_headers') %>
+	</head>
+	<body class="">
+		<section>
+			<div class="mt-20">
+				<h1 class="section-main-heading"><%- serviceToSend[0] %></h1>
+				<p class="section-main-p"><%- serviceToSend[1] %></p>
+				<ul>
+					<% for (const item of serviceToSend[2]) { %>
+					<li><%- item %></li>
+					<% } %>
+				</ul>
+				<a class="btn-primary" href="/contact_us"> Get Service!!! </a>
+			</div>
+		</section>
+	</body>
+</html>
