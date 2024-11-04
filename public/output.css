@@ -738,6 +738,8 @@ section.with-bg p {
 /* Input styles */
 
 .input-div {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   width: 100%;
   max-width: 48rem;

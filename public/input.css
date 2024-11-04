@@ -72,7 +72,7 @@
 
 	/* Input styles */
 	.input-div {
-		@apply flex flex-col w-full md:w-1/2 max-w-3xl;
+		@apply flex flex-col w-full md:w-1/2 max-w-3xl mx-auto;
 	}
 
 	.input-div label {
