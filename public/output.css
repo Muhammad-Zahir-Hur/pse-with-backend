@@ -1326,6 +1326,10 @@ div.article sub {
   margin-top: 5rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1361,6 +1365,10 @@ div.article sub {
 .h-max {
   height: -moz-max-content;
   height: max-content;
+}
+
+.max-h-\[100vh\] {
+  max-height: 100vh;
 }
 
 .min-h-\[100vh\] {
@@ -1548,6 +1556,24 @@ div.article sub {
 
 .\!text-left {
   text-align: left !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .\!text-red-700 {
