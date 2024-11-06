@@ -1621,6 +1621,10 @@ div.article sub {
   transition-delay: 75ms;
 }
 
+.delay-\[\] {
+  transition-delay: ;
+}
+
 .section-main-p {
   margin-bottom: 1rem;
   text-align: center;
