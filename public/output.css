@@ -1349,6 +1349,30 @@ div.article sub {
   margin-top: 5rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mt-36 {
+  margin-top: 9rem;
+}
+
 .block {
   display: block;
 }
@@ -1423,6 +1447,14 @@ div.article sub {
   width: min-content;
 }
 
+.w-\[\] {
+  width: ;
+}
+
+.w-\[80\%\] {
+  width: 80%;
+}
+
 .max-w-full {
   max-width: 100%;
 }
@@ -1494,6 +1526,10 @@ div.article sub {
 
 .gap-20 {
   gap: 5rem;
+}
+
+.gap-32 {
+  gap: 8rem;
 }
 
 .gap-5 {
