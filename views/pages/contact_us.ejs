@@ -2,7 +2,6 @@
 <html lang="en">
 	<head>
 		<%- include('../_headers') %>
-		<script defer src="/scripts/message.js"></script>
 		<title>Article</title>
 	</head>
 	<body>
@@ -63,6 +62,12 @@
 				</div>
 			</form>
 		</section>
+
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+		<script src="/scripts/message.js"></script>
+
 		<%- include('../_footer') %>
 	</body>
 </html>
