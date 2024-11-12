@@ -38,7 +38,7 @@
 		@apply bg-white rounded-lg px-5 pt-5;
 	}
 	.service {
-		@apply min-h-fit md:min-h-[100vh] h-auto bg-gray-200;
+		@apply min-h-fit md:min-h-[100vh] h-auto bg-gray-50;
 	}
 
 	.blog h2,

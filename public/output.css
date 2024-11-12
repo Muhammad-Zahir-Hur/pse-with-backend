@@ -650,7 +650,7 @@ nav {
   min-height: -moz-fit-content;
   min-height: fit-content;
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 768px) {
@@ -1537,6 +1537,14 @@ div.article sub {
 
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-sm {
+  border-radius: 0.125rem;
 }
 
 .border {
