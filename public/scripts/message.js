@@ -8,7 +8,7 @@
 
 function sendMessage() {
 	var params = {
-		form_name: document.getElementById("name").value,
+		from_name: document.getElementById("name").value,
 		email_id: document.getElementById("email").value,
 		message: document.getElementById("message").value,
 	};
