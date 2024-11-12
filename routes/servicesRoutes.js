@@ -2,12 +2,6 @@ import express from "express";
 
 const router = express.Router();
 
-
-
-
-
-
-
 const services = {
 	"Power-System-Planning": [
 		"Power System Planning",
@@ -19,6 +13,7 @@ const services = {
 			"Small Signal Stability Analysis",
 			"Harmonic Analysis and Power Quality Studies",
 		],
+		"planning.png",
 	],
 	"Grid-Interconnection": [
 		"Grid Interconnection",
@@ -29,6 +24,7 @@ const services = {
 			"Model Quality and Compliance Testing",
 			"Plant Control Interaction Studies (SSTI & SSCI)",
 		],
+		"grid_connection.png",
 	],
 	"Protection-and-Control": [
 		"Protection and Control",
@@ -37,6 +33,7 @@ const services = {
 			"Relay Protection Settings & Coordination",
 			"Protection Scheme Design",
 			"Arc Flash Analysis",
+			"protection.png",
 		],
 	],
 	"Operational-Studies": [
@@ -48,6 +45,7 @@ const services = {
 			"Constraint Analysis and Remedial Actions",
 			"Special Protection Schemes",
 		],
+		"operational_studies.jpg",
 	],
 	"Capacity-Building-and-Training": [
 		"Capacity Building and Training",
@@ -57,6 +55,7 @@ const services = {
 			"Advanced PSSE and PSCAD Trainings",
 			"Transmission Planning",
 		],
+		"training.jpg",
 	],
 
 	"Substation-Design": [
@@ -68,6 +67,7 @@ const services = {
 			"Earth Grid Analysis",
 			"Line Energization Studies",
 		],
+		"design.jpg",
 	],
 };
 
