@@ -18,8 +18,7 @@ const allAdminsPage = async (req, res) => {
 const RegisterAdmin = async (req, res, next) => {
 	console.log("inside os RegisterAdmin route");
 	const { name, password } = req.body;
-	console.log(`fetching name and password : ......... name: ${name}.......
-	password: ${password}`);
+
 	try {
 		if (!name || !password) {
 			console.log("!name || !password is True");
